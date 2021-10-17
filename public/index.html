@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/mainlogo.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#195290" />
+
+  <meta name="description" content="This app is Developed by AVRS" />
+
+  <link rel="apple-touch-icon" href="mainlogo.png" />
+  <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+  <!-- For boostrap icons
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+  <script src='https://cdn.rawgit.com/naptha/tesseract.js/1.0.10/dist/tesseract.js'></script>
+  <title>File Conversion Utility - Zaryab</title>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <!-- For image to text -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+  <script src="https://cdn.jsdelivr.net/npm/semantic-ui-css@2.2.12/semantic.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdn.rawgit.com/naptha/tesseract.js/1.0.10/dist/tesseract.js" type="text/javascript"></script>
+  <!-- End For image to text -->
+
+  <style>
+    #internetstatus {
+      display: none;
+      z-index: 96;
+      position: fixed;
+      color: white;
+      background: green;
+      width: 100%;
+      padding: 12px;
+      bottom: 1px;
+    }
+  </style>
+
+</head>
+
+<body onoffline='offline()' ononline='online()'>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+
+  <div id="root"></div>
+
+  <!--Check the internet connections-->
+  <script>
+
+    function offline() {
+      document.getElementById('internetstatus').innerHTML = "<center>Check Your Internet Connection <br> only Image Compressor & Image To Text Works offline</center>";
+      document.getElementById('internetstatus').style = "display:block";
+    }
+
+    function online() {
+      document.getElementById('internetstatus').innerHTML = "Welcome Back";
+      setTimeout(function () {
+        document.getElementById('internetstatus').style = "display:none";
+      }, 900);
+    }
+  </script>
+
+  <div id='internetstatus'></div>
+  <!--End Check the internet connections-->
+
+
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

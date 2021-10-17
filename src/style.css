@@ -1,0 +1,118 @@
+html,
+body {
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(221, 221, 221);
+    font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+}
+
+.navbar_center {
+    text-align: center;
+}
+
+.mbl {
+    width: 50%;
+}
+
+.vh {
+    height: 90vh;
+}
+
+.card {
+    background-color: rgb(54, 80, 109);
+    color: white;
+    border-radius: 12px;
+}
+
+.card-body {
+    min-height: 40vh;
+}
+
+.card:hover {
+    background-color: rgb(18, 60, 109);
+    cursor: pointer;
+}
+
+.heading {
+    align-content: center;
+}
+
+h5 {
+    margin-top: 20px;
+}
+
+.container {
+    width: 80%;
+}
+
+.c-pointer {
+    cursor: pointer;
+}
+
+/* for mobile view*/
+@media only screen and (max-width: 600px) {
+    .mbl {
+        width: 90%;
+    }
+
+    .navbar-brand {
+        width: 50%;
+    }
+
+    .card {
+        margin-top: 14px;
+    }
+
+    .container {
+        width: 100%;
+    }
+
+    .imagecompressionimg {
+        width: 174px !important;
+        height: auto;
+    }
+}
+
+footer {
+    margin-top: 10px;
+    background-color: #001731;
+}
+
+footer a {
+    text-decoration: none;
+    color: white;
+}
+
+.vhc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.btn {
+    cursor: pointer;
+}
+
+.imagecompressionimg {
+    width: 20%;
+    height: auto;
+}
+
+.img2txt {
+    background-color: goldenrod;
+    font-size: large;
+    padding: 12px;
+    margin-top: 10px;
+    color: white;
+}
+
+.img2txtbtn {
+    background-color: lightskyblue;
+    padding: 12px;
+    border: none;
+    border-radius: 12px;
+    display: block;
+    margin-top: 10px;
+}
