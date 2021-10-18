@@ -57,7 +57,7 @@ export default function Imageformat() {
             <div className="container my-5">
                 <div className="form-group">
                     <form onSubmit={convertfile}>
-                        <input type="file" className="form-control form-control-sm" id="file" name="file" onChange={(e) => handlefile(e)} accept="image/png, image/gif, image/jpeg,image/jpg" required />                   
+                        <input type="file" id="file" name="file" onChange={(e) => handlefile(e)} accept="image/png, image/gif, image/jpeg, image/jpg" required />                   
                         {file !== '' ? (
                             <>
                                 <br /><b>Convert Image into:</b>

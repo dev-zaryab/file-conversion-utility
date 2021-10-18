@@ -10,6 +10,10 @@ body {
     text-align: center;
 }
 
+.no-bg {
+    background: none;
+}
+
 .mbl {
     width: 50%;
 }
@@ -98,21 +102,4 @@ footer a {
 .imagecompressionimg {
     width: 20%;
     height: auto;
-}
-
-.img2txt {
-    background-color: goldenrod;
-    font-size: large;
-    padding: 12px;
-    margin-top: 10px;
-    color: white;
-}
-
-.img2txtbtn {
-    background-color: lightskyblue;
-    padding: 12px;
-    border: none;
-    border-radius: 12px;
-    display: block;
-    margin-top: 10px;
 }

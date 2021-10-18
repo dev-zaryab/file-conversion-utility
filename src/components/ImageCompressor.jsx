@@ -99,7 +99,7 @@ class imageCompressor extends React.Component {
                   </center>
                 )}
                 <div>
-                  <input type="file" id="file" accept="image/*" className="btn btn-warning w-100" onChange={e => this.handle(e)}/>
+                  <input type="file" id="file" accept="image/*" onChange={e => this.handle(e)}/>
                   {this.state.originalLink !== '' ? (
                     <>
                       <button type="button" className="btn btn-primary" onClick={e => this.click(e)}>
