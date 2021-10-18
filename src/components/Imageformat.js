@@ -52,7 +52,7 @@ export default function Imageformat() {
 
     return (
         <div className="main-container my-5 p-2">
-            <h1 className="text-center my-2">image converter</h1>
+            <h1 className="text-center my-2">Image Converter</h1>
             <p className="text-center">Transform images to other image extention </p>
             <div className="container my-5">
                 <div className="form-group">

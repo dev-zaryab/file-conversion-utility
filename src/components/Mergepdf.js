@@ -49,7 +49,7 @@ export default function Mergepdf() {
 
     return (
         <div className="main-container my-5 p-2">
-            <h1 className="text-center my-2">Merge PDFS</h1>
+            <h1 className="text-center my-2">Merge PDF</h1>
             <p className="text-center">Combine PDFs in the order you want with the easiest PDF merger available. </p>
             <div className="container my-5">
                 <div className="form-group">

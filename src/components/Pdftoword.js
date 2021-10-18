@@ -23,7 +23,7 @@ export default function Pdftoword() {
 
     return (
         <div className="main-container my-5 p-2">
-            <h1 className="text-center my-2">Pdf to Word</h1>
+            <h1 className="text-center my-2">PDF to Word</h1>
             <p className="text-center">Convert your PDF to WORD documents with incredible accuracy.</p>
             <div className="container my-5">
                 <div className="form-group">

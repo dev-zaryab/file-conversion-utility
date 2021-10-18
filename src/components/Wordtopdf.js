@@ -51,7 +51,7 @@ export default function Wordtopdf() {
 
     return (
         <div className="main-container my-5 p-2">
-            <h1 className="text-center my-2">Word to Pdf</h1>
+            <h1 className="text-center my-2">Word to PDF</h1>
             <p className="text-center">Make DOC and DOCX files easy to read by converting them to PDF.</p>
             <div className="container my-5">
                 <div className="form-group">

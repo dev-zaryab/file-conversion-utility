@@ -51,7 +51,7 @@ export default function Pdftoimage() {
 
     return (
         <div className="main-container my-5 p-2">
-            <h1 className="text-center my-2">PDF to Image's(Work in Progress)</h1>
+            <h1 className="text-center my-2">PDF to Image</h1>
             <p className="text-center">Convert PDF to Images in seconds. Easily adjust orientation and margins.</p>
             <div className="container my-5">
                 <div className="form-group">
