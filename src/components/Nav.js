@@ -23,7 +23,6 @@ export const Nav = () => {
             <Link className="nav-link" to="/Imagecompressor">Image Compressor <span className="sr-only">(current)</span></Link>
           </li>
 
-
           <li className="nav-item dropdown active">
             <div className="nav-link dropdown-toggle c-pointer" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Converters
@@ -47,10 +46,7 @@ export const Nav = () => {
             <Link className="nav-link" to="Features">Features</Link>
           </li>
         </ul>
-
-
       </div>
     </nav>
-
   )
 }

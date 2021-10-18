@@ -9,7 +9,6 @@ export default function Mergepdf() {
 
     function handlefile(e) {
         setfile(e.target.files)
-
         //****** file Validation *********
         var fileInput = document.getElementById('file');
         var filePath = fileInput.value;
@@ -54,20 +53,15 @@ export default function Mergepdf() {
             <p className="text-center">Combine PDFs in the order you want with the easiest PDF merger available. </p>
             <div className="container my-5">
                 <div className="form-group">
-
                     <form onSubmit={Mergepdffile}>
                         <input type="file" className="form-control-file" id="file" name="file" onChange={(e) => handlefile(e)} accept=".pdf" multiple required />
-
                       
                         {file !== '' ? (
                             <button type="submit" className="btn btn-success my-2">Merge</button>
                         ) : 'No file is selected'}
-
                     </form>
-
                     <Progressbar progress={progress} setprogress={setprogress} msg="File is Downloading... !" alerttype="#fd7e14" />
                 </div>
-
             </div>
         </div>
     )

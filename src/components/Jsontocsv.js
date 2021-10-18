@@ -10,7 +10,6 @@ export default function Jsontocsv() {
 
     function handlefile(e) {
         setfile(e.target.files)
-
         //****** file Validation *********
         var fileInput = document.getElementById('file');
         var filePath = fileInput.value;
@@ -20,11 +19,9 @@ export default function Jsontocsv() {
             swal("Oops", "Please Upload a Valid File", "error")
             setfile('')
         }
-
         //****** End file Validation ********* 
-
-
     }
+
     async function convertfile(e) {
         e.preventDefault();
         setprogress(2)
@@ -61,16 +58,12 @@ export default function Jsontocsv() {
                 <div className="form-group">
                     <form onSubmit={convertfile}>
                         <input type="file" className="form-control-file" id="file" name="file" onChange={(e) => handlefile(e)} accept=".json" multiple required />
-
                       
                         {file !== '' ? (
                             <button type="submit" className="btn btn-success my-2">Convert</button>
                         ) : 'No file is selected'}
-
                     </form>
                     <Progressbar progress={progress} setprogress={setprogress} msg="File is Downloading... !" alerttype="#fd7e14" />
-
-
                 </div>
             </div>
         </div>

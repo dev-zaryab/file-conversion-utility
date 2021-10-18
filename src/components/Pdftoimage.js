@@ -10,7 +10,6 @@ export default function Pdftoimage() {
 
     function handlefile(e) {
         setfile(e.target.files);
-
         //****** file Validation *********
         var fileInput = document.getElementById('file');
         var filePath = fileInput.value;
@@ -19,9 +18,7 @@ export default function Pdftoimage() {
             swal("Oops", "Please Upload a Valid File", "error")
             setfile('')
         }
-
         //****** End file Validation ********* 
-
     }
 
     async function convertfile(e) {
@@ -53,8 +50,6 @@ export default function Pdftoimage() {
     }
 
     return (
-
-
         <div className="main-container my-5 p-2">
             <h1 className="text-center my-2">PDF to Image's(Work in Progress)</h1>
             <p className="text-center">Convert PDF to Images in seconds. Easily adjust orientation and margins.</p>
@@ -64,21 +59,13 @@ export default function Pdftoimage() {
                     <form onSubmit={convertfile}>
                         <input type="file" className="form-control-file" id="file" name="file" onChange={(e) => handlefile(e)} accept=".pdf" multiple required />
 
-
-                      
                         {file !== '' ? (
                             <button type="submit" className="btn btn-success my-2">Convert</button>
                         ) : 'No file is selected'}
-
                     </form>
-
                     <Progressbar progress={progress} setprogress={setprogress} msg="File is Downloading... !" alerttype="#fd7e14" />
-
                 </div>
             </div>
-
         </div>
-
-
     )
 }

@@ -10,7 +10,6 @@ export default function Fencrypt() {
 
     function handlefile(e) {
         setfile(e.target.files)
-
     }
 
     async function encrptfile(e) {
@@ -42,15 +41,11 @@ export default function Fencrypt() {
         });
     }
 
-
     return (
         <div>
             <form onSubmit={encrptfile}>
                 <div className="form-group">
                     <input type="file" id="file" className="form-control" onChange={(e) => handlefile(e)} required />
-
-                
-
                     {file !== '' ? (
                         <>
                             <div className="form-group">
@@ -61,18 +56,17 @@ export default function Fencrypt() {
                         </>
                     ) : 'No file is selected'}
                 </div>
-
             </form>
-
             <Progressbar progress={progress} setprogress={setprogress} msg="Encrypted File is Downloading... !" alerttype="green" />
+           
             <h2 className="my-2">How its works</h2>
             <ol>
                 <li>Upload your file</li>
                 <li>Enter Your password</li>
-                <li>Click on Encrypt button</li>
-                <li>after that your encrypted file will automatically download</li>
-                <li>send this file to anybody</li>
-                <li> if he/she have the password then only that person can access/Decrypt the file</li>
+                <li>Click on Encrypt Button</li>
+                <li>After that your Encrypted file will be automatically download</li>
+                <li>Send this file to anybody</li>
+                <li>If he/she have the password then only that person can Access/Decrypt the file</li>
             </ol>
         </div>
     )

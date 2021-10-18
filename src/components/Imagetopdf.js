@@ -10,7 +10,6 @@ export default function Imagetopdf() {
 
     function handlefile(e) {
         setfile(e.target.files);
-
         //****** file Validation *********
         var fileInput = document.getElementById('file');
         var filePath = fileInput.value;
@@ -19,9 +18,7 @@ export default function Imagetopdf() {
             swal("Oops", "Please Upload a Valid File", "error")
             setfile('')
         }
-
         //****** End file Validation ********* 
-
     }
 
     async function convertfile(e) {
@@ -31,21 +28,6 @@ export default function Imagetopdf() {
         for (let i = 0; i < file.length; i++) {
             formData.append("files", file[i]);
         }
-        // formData.append("files", file);
-
-        //    await axios.put('http://localhost:5000/upload', formData, {
-        //         headers: {
-        //             'Content-Type': 'multipart/form-data'
-        //         }
-        //     },config).then((response) => {
-        //         console.log(response.data);
-        //         const link = document.createElement('a');
-        //         link.href = response.data;
-        //         document.body.appendChild(link);
-        //         link.click();
-
-        //     setprogress(100)
-        //     })
 
         await axios({
             method: 'post',
@@ -68,8 +50,6 @@ export default function Imagetopdf() {
     }
 
     return (
-
-
         <div className="main-container my-5 p-2">
             <h1 className="text-center my-2">image's to Pdf</h1>
             <p className="text-center">Convert images to PDF in seconds. Easily adjust orientation and margins.</p>
@@ -78,23 +58,13 @@ export default function Imagetopdf() {
 
                     <form onSubmit={convertfile}>
                         <input type="file" className="form-control-file" id="file" name="file" onChange={(e) => handlefile(e)} accept="image/png, image/gif, image/jpeg,image/jpg" multiple required />
-
-
-                       
-
                         {file !== '' ? (
                             <button type="submit" className="btn btn-success my-2">Convert</button>
                         ) : 'No file is selected'}
-
                     </form>
-
                     <Progressbar progress={progress} setprogress={setprogress} msg="File is Downloading... !" alerttype="#fd7e14" />
-
                 </div>
             </div>
-
         </div>
-
-
     )
 }

@@ -3,7 +3,6 @@ import axios from 'axios';
 import Progressbar from './Progressbar';
 import swal from 'sweetalert';
 
-
 export default function Wordtopdf() {
 
     const [file, setfile] = useState("")
@@ -11,7 +10,6 @@ export default function Wordtopdf() {
 
     function handlefile(e) {
         setfile(e.target.files);
-
         //****** file Validation *********
         var fileInput = document.getElementById('file');
         var filePath = fileInput.value;
@@ -20,7 +18,6 @@ export default function Wordtopdf() {
             swal("Oops", "Please Upload a Valid File", "error")
             setfile('')
         }
-
         //****** End file Validation ********* 
     }
 
@@ -53,32 +50,21 @@ export default function Wordtopdf() {
     }
 
     return (
-
-
         <div className="main-container my-5 p-2">
             <h1 className="text-center my-2">Word to Pdf</h1>
             <p className="text-center">Make DOC and DOCX files easy to read by converting them to PDF.</p>
             <div className="container my-5">
                 <div className="form-group">
-
                     <form onSubmit={convertfile}>
                         <input type="file" className="form-control-file" id="file" name="file" onChange={(e) => handlefile(e)} accept=".docx,.doc" multiple required />
-
-
                     
                         {file !== '' ? (
                             <button type="submit" className="btn btn-success my-2">Convert into pdf</button>
                         ) : 'No file is selected'}
-
                     </form>
-
                     <Progressbar progress={progress} setprogress={setprogress} msg="File is Downloading... !" alerttype="#fd7e14" />
-
                 </div>
             </div>
-
         </div>
-
-
     )
 }

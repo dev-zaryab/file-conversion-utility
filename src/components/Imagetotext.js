@@ -5,10 +5,8 @@ var Tesseract = window.Tesseract;
 
 
 export function Imagetotext() {
-
   const [imagePath, setImagePath] = useState("");
   const [text, setText] = useState("");
-
   const handleChange = (event) => {
     setImagePath(URL.createObjectURL(event.target.files[0]));
   }
@@ -16,7 +14,6 @@ export function Imagetotext() {
   function copytext(e) {
     navigator.clipboard.writeText(text);
     e.target.innerHTML = "Copied";
-
   }
   const handleClick = (e) => {
     e.preventDefault();
@@ -25,20 +22,16 @@ export function Imagetotext() {
       imagePath, 'eng',
       {
         logger: m => console.log(m)
-
       }
     )
       .catch(err => {
         console.error(err);
       })
       .then(result => {
-
         // Get Confidence score
-        //let confidence = result.confidence
-
+        // let confidence = result.confidence
         let text = result.text
         setText(text);
-
       })
   }
 
@@ -50,7 +43,6 @@ export function Imagetotext() {
       <div className="container my-5">
         {imagePath !== '' ? <img src={imagePath} alt="something went wrong" width="100%" /> : ''}
 
-
         {text !== '' ? (<><div class="alert alert-success p-4 my-2" role="alert"><b>Converted Text is</b><br /><br />{text}
           <button className="btn btn-secondary d-block my-2" onClick={(e) => copytext(e)} type="button">Copy</button>
         </div>
@@ -60,16 +52,12 @@ export function Imagetotext() {
         <form onSubmit={handleClick}>
           <input type="file" id="file" onChange={handleChange} accept="image/png, image/gif, image/jpeg,image/jpg" required />
         
-
           {imagePath !== '' ? (
             <button type="submit" className="btn btn-success my-2">Convert</button>
           ) : 'No file is selected'}
-
         </form>
       </div>
-
     </div>
-
   );
 }
 

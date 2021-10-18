@@ -12,7 +12,6 @@ export default function Fdecrypt() {
 
     function handlefile2(e) {
         setfile(e.target.files)
-
     }
     async function decrptfile(e) {
         e.preventDefault();
@@ -30,7 +29,6 @@ export default function Fdecrypt() {
             data: formData,
             headers: {
                 'Content-Type': 'multipart/form-data'
-
             },
             onUploadProgress(progressEvent) {
                 var percentCompleted = Math.round((progressEvent.loaded * 100) / progressEvent.total)
@@ -48,19 +46,15 @@ export default function Fdecrypt() {
             else {
                 setprogress(0)
                 setError("Sorry you entered Password is Not Match for decrytion");
-
             }
         }).catch((e) = console.log("Some Error Occurs"));
     }
-
 
     return (
         <div>
             <form onSubmit={decrptfile}>
                 <div className="form-group">
                     <input type="file" id="file2" className="form-control" onChange={(e) => handlefile2(e)} required />
-                
-
                     {file !== '' ? (
                         <>
                             <div className="form-group">
@@ -70,16 +64,9 @@ export default function Fdecrypt() {
                             <button type="submit" className="btn btn-success my-2">Decrypt</button>
                         </>
                     ) : 'No file is selected'}
-
                 </div>
-
-
             </form>
-
             <Progressbar progress={progress} setprogress={setprogress} msg="File is Downloading... !" alerttype="#fd7e14" />
-
-
-
             {error !== '' ?
                 <Alerts msg={error} alerttype="red" />
                 : ' '}
@@ -87,9 +74,9 @@ export default function Fdecrypt() {
             <h2 className="my-2">How its works</h2>
             <ol>
                 <li>Upload your Encrypted file </li>
-                <li>Enter that decryption password</li>
-                <li>Click on Decrypt button</li>
-                <li>After that your decrypted file will automatically download if the password match</li>
+                <li>Enter that Decryption password</li>
+                <li>Click on Decrypt Button</li>
+                <li>After that your decrypted file will be automatically download if the password match</li>
             </ol>
 
         </div>

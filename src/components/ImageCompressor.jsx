@@ -17,11 +17,7 @@ class imageCompressor extends React.Component {
     };
   }
 
-
-
-
   handle = e => {
-
     const imageFile = e.target.files[0];
     this.setState({
       originalLink: URL.createObjectURL(imageFile),
@@ -29,8 +25,6 @@ class imageCompressor extends React.Component {
       outputFileName: imageFile.name,
       uploadImage: true
     });
-
-
   };
 
   changeValue = e => {
@@ -39,27 +33,19 @@ class imageCompressor extends React.Component {
   };
 
   click = e => {
-
-
     e.preventDefault();
-
     const options = {
       maxSizeMB: 2,
-
       useWebWorker: true,
       onProgress: (per) => {
-
         if (per === 10) {
           console.log("please wait Compressing");
         } else {
-
           this.setState({
             compressedCompleted: "100"
           });
         }
       },
-
-
     };
 
     if (options.maxSizeMB >= this.state.originalImage.size / 1024) {
@@ -70,19 +56,11 @@ class imageCompressor extends React.Component {
     let output;
     imageCompression(this.state.originalImage, options).then(x => {
       output = x;
-
-
       const downloadLink = URL.createObjectURL(output);
-      //alert(output.size);
       this.setState({
         compressedLink: downloadLink,
         compressedfilesize: output.size,
-        // compressedquality:document.getElementById("quality").value
       });
-
-      // alert(this.state.originalImage.size); 
-      //alert("compressed"+this.state.compressedLink.length);
-
     });
 
     this.setState({ clicked: true });
@@ -90,24 +68,16 @@ class imageCompressor extends React.Component {
   };
 
   render() {
-
     function formatBytes(bytes, decimals = 2) {
       if (bytes === 0) return '0 Bytes';
-
       const k = 1024;
       const dm = decimals < 0 ? 0 : decimals;
       const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
-
       const i = Math.floor(Math.log(bytes) / Math.log(k));
-
       return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];
     }
 
-
-
     console.log("Original image size:" + formatBytes(this.state.originalImage.size));
-
-
 
     return (
       <>
@@ -120,51 +90,21 @@ class imageCompressor extends React.Component {
               <div>
                 {this.state.uploadImage ? (
                   <>
-                    <img
-                      className="card-img-top"
-                      variant="top"
-                      src={this.state.originalLink}
-                      alt="img Not Loaded Something went Wrong"
-
-                    ></img>
-
-
+                    <img className="card-img-top" variant="top" src={this.state.originalLink} alt="img Not Loaded Something went Wrong"></img>
                   </>
 
                 ) : (
                   <center>
-                    <img
-                      className="imagecompressionimg"
-                      variant="top"
-                      src="imagecompression.png"
-                      alt="Something went Wrong"
-
-                    >
-
-                    </img>
+                    <img className="imagecompressionimg" variant="top" src="imagecompression.png" alt="Something went Wrong"></img>
                   </center>
                 )}
                 <div>
-                  <input
-                    type="file"
-                    id="file"
-                    accept="image/*"
-                    className="btn btn-warning w-100"
-                    onChange={e => this.handle(e)}
-                  />
-
-                
-
+                  <input type="file" id="file" accept="image/*" className="btn btn-warning w-100" onChange={e => this.handle(e)}/>
                   {this.state.originalLink !== '' ? (
                     <>
-                      <button
-                        type="button"
-                        className="btn btn-primary"
-                        onClick={e => this.click(e)}
-                      >
+                      <button type="button" className="btn btn-primary" onClick={e => this.click(e)}>
                         Compress
                       </button>
-
                     </>
                   ) : 'No file is selected'}
                   <br /><br />
@@ -172,7 +112,6 @@ class imageCompressor extends React.Component {
               </div>
 
               <div>
-
                 <br />
                 <div className="text-dark">
                   {this.state.compressedfilesize !== undefined ? (
@@ -184,22 +123,13 @@ class imageCompressor extends React.Component {
                           <b>Compressed image size:{formatBytes(this.state.compressedfilesize)}  </b><br /><br />
                           {this.state.clicked ? (
                             <div>
-                              <a
-                                href={this.state.compressedLink}
-                                className="btn btn-danger"
-                              >
+                              <a href={this.state.compressedLink} className="btn btn-danger">
                                 View
                               </a>
 
-
-                              <a
-                                href={this.state.compressedLink}
-                                download={this.state.outputFileName}
-                                className="m-4 btn btn-success"
-                              >
+                              <a href={this.state.compressedLink} download={this.state.outputFileName} className="m-4 btn btn-success">
                                 Download
                               </a>
-
                             </div>
                           ) : (
                             <></>
@@ -208,19 +138,13 @@ class imageCompressor extends React.Component {
                       ) :
                         (
                           <>
-
                           </>
                         )}
-
                     </>) : ''}
-
-
                 </div>
               </div>
-
             </div>
           </div>
-
         </div>
       </>
     );

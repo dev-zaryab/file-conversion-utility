@@ -19,10 +19,7 @@ export default function Csvtojson() {
             swal("Oops", "Please Upload a Valid File", "error")
             setfile('')
         }
-
         //****** End file Validation ********* 
-
-
     }
     async function convertfile(e) {
         e.preventDefault();
@@ -60,20 +57,12 @@ export default function Csvtojson() {
                 <div className="form-group">
                     <form onSubmit={convertfile}>
                         <input type="file" className="form-control-file" id="file" name="file" onChange={(e) => handlefile(e)} accept=".csv" multiple required />
-
-                      
-
                         {file !== '' ? (
                             <button type="submit" className="btn btn-success my-2">Convert</button>
                         ) : 'No file is selected'}
-
                     </form>
-
                     <Progressbar progress={progress} setprogress={setprogress} msg="File is Downloading... !" alerttype="#fd7e14" />
-
-
                 </div>
-
             </div>
         </div>
     )

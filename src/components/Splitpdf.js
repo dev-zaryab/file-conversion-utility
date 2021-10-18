@@ -11,7 +11,6 @@ export default function Splitpdf() {
 
     function handlefile(e) {
         setfile(e.target.files);
-
         //****** file Validation *********
         var fileInput = document.getElementById('file');
         var filePath = fileInput.value;
@@ -20,9 +19,7 @@ export default function Splitpdf() {
             swal("Oops", "Please Upload a Valid File", "error")
             setfile('')
         }
-
         //****** End file Validation ********* 
-
     }
     async function Splitpdffile(e) {
         e.preventDefault();
@@ -44,12 +41,9 @@ export default function Splitpdf() {
                 setprogress(percentCompleted)
             }
         }).then((response) => {
-
             for (let index = 1; index <= response.data.pages; index++) {
                 let d = response.data.url + '-' + index + '.pdf';
                 f.push(d);
-
-
             }
             setsplitpdfs(f);
         });
@@ -60,20 +54,14 @@ export default function Splitpdf() {
             <p className="text-center">Separate one page or a whole set for easy conversion into independent PDF files. </p>
             <div className="container my-5">
                 <div className="form-group">
-
                     <form onSubmit={Splitpdffile}>
                         <input type="file" className="form-control-file" id="file" name="file" onChange={(e) => handlefile(e)} accept=".pdf" required />
 
-
-                       
                         {file !== '' ? (
                             <button type="submit" className="btn btn-success my-2">Split</button>
                         ) : 'No file is selected'}
-
                     </form>
-
                     <Progressbar progress={progress} setprogress={setprogress} msg="File Uploaded" alerttype="green" />
-
                 </div>
                 {splitpdfs.map((d, index) => {
 
@@ -82,15 +70,11 @@ export default function Splitpdf() {
                             <div className="my-2 alert alert-warning alert-dismissible text-light fade show" style={{ backgroundColor: 'blueviolet' }} role="alert">
                                 <strong>Page no {index + 1}<a href={d} className="text-decoration-none text-danger"> Download </a></strong>
                             </div>
-
                         </div>
                     )
-
                 }
                 )}
             </div>
-
         </div>
-
     )
 }

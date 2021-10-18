@@ -11,7 +11,6 @@ export default function Imageformat() {
 
     function handlefile(e) {
         setfile(e.target.files)
-
         //****** file Validation *********
         var fileInput = document.getElementById('file');
         var filePath = fileInput.value;
@@ -20,9 +19,7 @@ export default function Imageformat() {
             swal("Oops", "Please Upload a Valid File", "error")
             setfile('')
         }
-
         //****** End file Validation ********* 
-
     }
     async function convertfile(e) {
         e.preventDefault();
@@ -59,16 +56,11 @@ export default function Imageformat() {
             <p className="text-center">Transform images to other image extention </p>
             <div className="container my-5">
                 <div className="form-group">
-
                     <form onSubmit={convertfile}>
-                        <input type="file" className="form-control form-control-sm" id="file" name="file" onChange={(e) => handlefile(e)} accept="image/png, image/gif, image/jpeg,image/jpg" required />
-
-                      
+                        <input type="file" className="form-control form-control-sm" id="file" name="file" onChange={(e) => handlefile(e)} accept="image/png, image/gif, image/jpeg,image/jpg" required />                   
                         {file !== '' ? (
                             <>
-
                                 <br /><b>Convert Image into:</b>
-
                                 <select className="my-2 form-select" onChange={(e) => { setImgEXT(e.target.value) }}>
                                     <option value="jpg">Convert into</option>
                                     <option value="jpg">JPG</option>
@@ -79,13 +71,9 @@ export default function Imageformat() {
                                 <button type="submit" className="btn btn-success my-2">Convert</button>
                             </>
                         ) : 'No file is selected'}
-
-
                     </form>
                     <Progressbar progress={progress} setprogress={setprogress} msg="File is Downloading... !" alerttype="#fd7e14" />
-
                 </div>
-
             </div>
         </div>
     )

@@ -47,7 +47,6 @@ const App = () =>
 
         <Route exact path="/changeimageformat">
           <Imageformat />
-
         </Route>
 
         <Route exact path="/imgtopdf">
@@ -66,7 +65,6 @@ const App = () =>
           <Jsontocsv />
         </Route>
 
-
         <Route exact path="/Fileencrption">
           <Fileencrption />
         </Route>
@@ -78,10 +76,10 @@ const App = () =>
         <Route exact path="/splitpdf">
           <Splitpdf />
         </Route>
+        
         <Route exact path="/Passwordprotectpdffile">
           <Passwordprotectpdf />
         </Route>
-
 
         <Route exact path="/wordtopdf">
           <Wordtopdf />
@@ -91,9 +89,8 @@ const App = () =>
           <Pdftoword />
         </Route>
 
-
         <Route>
-          <h2>404 error Page Not Found</h2>
+          <h2>404 Error Page Not Found</h2>
         </Route>
 
       </Switch>

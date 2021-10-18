@@ -10,7 +10,6 @@ export default function Passwordprotectpdf() {
 
     function handlefile(e) {
         setfile(e.target.files);
-
         //****** file Validation *********
         var fileInput = document.getElementById('file');
         var filePath = fileInput.value;
@@ -19,10 +18,7 @@ export default function Passwordprotectpdf() {
             swal("Oops", "Please Upload a Valid File", "error")
             setfile('')
         }
-
         //****** End file Validation ********* 
-
-
     }
     async function Passwordprotectpdffile(e) {
         e.preventDefault();
@@ -61,8 +57,6 @@ export default function Passwordprotectpdf() {
                     <form onSubmit={Passwordprotectpdffile}>
                         <input type="file" className="form-control-file" id="file" name="file" onChange={(e) => handlefile(e)} accept=".pdf" required />
 
-                      
-
                         {file !== '' ? (
                             <>
                                 <div className="form-group my-2">
@@ -72,12 +66,9 @@ export default function Passwordprotectpdf() {
                                 <button type="submit" className="btn btn-success my-2">Create Protected PDF</button>
                             </>
                         ) : 'No file is selected'}
-
                     </form>
-
                     <Progressbar progress={progress} setprogress={setprogress} msg="File is Downloading... !" alerttype="#fd7e14" />
                 </div>
-
             </div>
         </div>
     )
