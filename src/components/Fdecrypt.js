@@ -54,7 +54,7 @@ export default function Fdecrypt() {
         <div>
             <form onSubmit={decrptfile}>
                 <div className="form-group">
-                    <input type="file" id="file2" className="form-control" onChange={(e) => handlefile2(e)} required />
+                    <input type="file" id="file2" onChange={(e) => handlefile2(e)} required />
                     {file !== '' ? (
                         <>
                             <div className="form-group">

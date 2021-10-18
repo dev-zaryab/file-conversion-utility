@@ -45,7 +45,7 @@ export default function Fencrypt() {
         <div>
             <form onSubmit={encrptfile}>
                 <div className="form-group">
-                    <input type="file" id="file" className="form-control" onChange={(e) => handlefile(e)} required />
+                    <input type="file" id="file" onChange={(e) => handlefile(e)} required />
                     {file !== '' ? (
                         <>
                             <div className="form-group">
